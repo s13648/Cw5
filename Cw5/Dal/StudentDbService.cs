@@ -55,7 +55,7 @@ namespace Cw5.Dal
             await using var command = new SqlCommand(GetStudentsSql,sqlConnection) {CommandType = CommandType.Text};
             await sqlConnection.OpenAsync();
 
-            var sqlDataReader = await command.ExecuteReaderAsync();
+            await using var sqlDataReader = await command.ExecuteReaderAsync();
             var students = new List<Student>();
             while (await sqlDataReader.ReadAsync())
             {
@@ -82,7 +82,7 @@ namespace Cw5.Dal
 
             await sqlConnection.OpenAsync();
 
-            var sqlDataReader = await command.ExecuteReaderAsync();
+            await using var sqlDataReader = await command.ExecuteReaderAsync();
             return await sqlDataReader.ReadAsync();
         }
 

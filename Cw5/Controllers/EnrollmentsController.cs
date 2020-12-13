@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Cw5.Dal;
 using Cw5.Dto;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization.Internal;
 
 namespace Cw5.Controllers
 {
@@ -34,6 +35,18 @@ namespace Cw5.Controllers
             var enrollment = await enrollmentDbService.EnrollStudent(model,study);
 
             return StatusCode(201, enrollment);
+        }
+
+        [HttpPost("promotions")]
+        public async Task<IActionResult> Promotions(Promotions promotions)
+        {
+            if (!await enrollmentDbService.Exists(promotions.Studies, promotions.Semester))
+                return BadRequest("Promotion not found");
+
+
+            await enrollmentDbService.Promotions(promotions);
+
+            return StatusCode(201, await enrollmentDbService.GetBy(promotions.Studies, promotions.Semester + 1));
         }
     }
 }

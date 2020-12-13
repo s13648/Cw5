@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Cw5.Dto;
@@ -29,7 +27,7 @@ namespace Cw5.Dal
             command.Parameters.AddWithValue("Name", modelStudies);
             await sqlConnection.OpenAsync();
 
-            var sqlDataReader = await command.ExecuteReaderAsync();
+            await using var sqlDataReader = await command.ExecuteReaderAsync();
             while (await sqlDataReader.ReadAsync())
             {
                 return new Study
