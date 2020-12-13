@@ -23,7 +23,7 @@ namespace Cw5
             services.AddTransient<IStudentDbService, StudentDbService>();
             services.AddTransient<IEnrollmentDbService, EnrollmentDbService>();
 
-            services.AddTransient<IConfig,Config>(b => new Config
+            services.AddTransient<IConfig,Config>(b => new Config  
             {
                 ConnectionString = Configuration["DbConnectionString"]
             });
