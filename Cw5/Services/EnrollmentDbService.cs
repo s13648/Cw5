@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Cw5.Dto;
 
-namespace Cw5.Dal
+namespace Cw5.Services
 {
     public class EnrollmentDbService : IEnrollmentDbService
     {
