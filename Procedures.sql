@@ -4,6 +4,7 @@ CREATE PROCEDURE Enrollment_Promotions
 	@Semester INT
 AS
 BEGIN
+	BEGIN TRANSACTION 
 
 	DECLARE @NewSemester INT = @Semester + 1
 
@@ -59,7 +60,7 @@ BEGIN
 		E.Semester = @Semester
 
 
-
+	COMMIT
 END
 GO
 
