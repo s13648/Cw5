@@ -19,11 +19,11 @@ namespace Cw5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IStudyDbService, StudyDbService>();
-            services.AddSingleton<IStudentDbService, StudentDbService>();
-            services.AddSingleton<IEnrollmentDbService, EnrollmentDbService>();
+            services.AddTransient<IStudyDbService, StudyDbService>();
+            services.AddTransient<IStudentDbService, StudentDbService>();
+            services.AddTransient<IEnrollmentDbService, EnrollmentDbService>();
 
-            services.AddSingleton<IConfig,Config>(b => new Config
+            services.AddTransient<IConfig,Config>(b => new Config
             {
                 ConnectionString = Configuration["DbConnectionString"]
             });
