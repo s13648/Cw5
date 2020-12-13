@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cw5.Models
+namespace Cw5.Dto
 {
     public class EnrollStudent
     {

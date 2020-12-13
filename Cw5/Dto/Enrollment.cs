@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cw5.Models
+namespace Cw5.Dto
 {
     public class Enrollment
     {

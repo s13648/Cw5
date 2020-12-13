@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Cw5.Dal;
-using Cw5.Models;
+using Cw5.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cw5.Controllers
