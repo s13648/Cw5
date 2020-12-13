@@ -1,9 +1,7 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Cw5.Dal;
 using Cw5.Dto;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization.Internal;
 
 namespace Cw5.Controllers
 {
